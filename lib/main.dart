@@ -87,11 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   TextField(
                                     controller: _idController,
+                                    autofocus: true,
                                   ),
                                   const SizedBox(
                                     height: 16,
                                   ),
-                                  TextField(controller: _nameController),
+                                  TextField(
+                                    controller: _nameController,
+                                  ),
                                   const SizedBox(
                                     height: 16,
                                   ),
@@ -101,6 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       final value = _nameController.text;
 
                                       friendsBox.put(key, value);
+                                      _idController.clear();
+                                      _nameController.clear();
                                       Navigator.pop(context);
                                     },
                                     child: const Text('submit'),
@@ -131,6 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   TextField(
                                     controller: _idController,
+                                    autofocus: true,
                                   ),
                                   const SizedBox(
                                     height: 16,
@@ -145,6 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       final value = _nameController.text;
 
                                       friendsBox.put(key, value);
+                                      _idController.clear();
+                                      _nameController.clear();
                                       Navigator.pop(context);
                                     },
                                     child: const Text('submit'),
@@ -175,6 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 children: [
                                   TextField(
                                     controller: _idController,
+                                    autofocus: true,
                                   ),
                                   const SizedBox(
                                     height: 16,
@@ -183,6 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     onPressed: () {
                                       final key = _idController.text;
                                       friendsBox.delete(key);
+                                      _idController.clear();
                                       Navigator.pop(context);
                                     },
                                     child: const Text('submit'),
